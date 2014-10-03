@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.clinification.app" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0">
+    <name>Clinification</name>
+    <description>
+        Ionic Restify and MongoDB - An End to End Hybrid App
+    </description>
+    <author email="email@mail.com">
+      Author
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <preference name="fullscreen" value="true" />
+    <preference name="webviewbounce" value="false" />
+    <preference name="UIWebViewBounce" value="false" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="phonegap-version" value="3.3.0" />
+<!--
+    
+    <preference name="AutoHideSplashScreen" value="false" />
+-->
+    
+    <platform name="ios">
+        <splash src="img/Default-568h@2x~iphone.png" width="2048" height="1536"/> 
+    </platform>
+    
+    <icon src="img/Icon-60@2x.png" />
+    
+    <feature name="SplashScreen">
+        <param name="ios-package" value="CDVSplashScreen" />
+    </feature>
+    
+    <feature name="StatusBar">
+      <param name="ios-package" value="CDVStatusBar" onload="true" />
+    </feature>
+</widget>
