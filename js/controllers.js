@@ -194,15 +194,23 @@ angular.module('baseApp.controllers', ['baseApp.services'])
     };
 
     $scope.createNew = function () {
-        var item = this.data.item;
-        if (!item) return;
+        var date = this.data.date;
+        var workName = this.data.workName;
+        var workType = this.data.workType;
+        var unitCost = this.data.unitCost;
+        var totalCost = this.data.totalCost;
+        if (!workName) return;
         $scope.modal.hide();
         $rootScope.show();
 
         $rootScope.show("Please wait... Creating new");
 
         var form = {
-            item: item,
+            date: date,
+            workName: workName,
+            workType: workType,
+            unitCost: unitCost,
+            totalCost: totalCost,
             isCompleted: false,
             user: $rootScope.getToken(),
             created: Date.now(),

@@ -5,6 +5,38 @@
       <button class="button button-positive" ng-click="createNew()">Done</button>
    </header>
    <ion-content class="padding has-header">
-      <input type="text" placeholder="I need to do..." ng-model="data.item">
+    
+      <div class="list">
+          <label class="item item-input">
+            <span class="input-label">Date</span>
+            <input type="date" ng-model="data.date">
+          </label>
+          
+          <label class="item item-input">
+            <input type="text" placeholder="Work Name" ng-model="data.workName">
+          </label>
+          
+          <label class="item item-input item-select">
+            <div class="input-label">
+              Work Type
+            </div>
+            <select ng-model="data.workType">
+              <option>Building</option>
+              <option>Digging</option>
+              <option selected>Filling</option>
+            </select>
+          </label>
+          
+          <label class="item item-input">
+              <span class="input-label">Unit Cost</span>
+              <input type="number" ng-model="data.unitCost">
+          </label>
+          
+          <label class="item item-input">
+              <span class="input-label">Total Cost</span>
+              <input type="number" ng-model="data.totalCost">
+          </label>
+      </div>
+       
    </ion-content>
 </div>
