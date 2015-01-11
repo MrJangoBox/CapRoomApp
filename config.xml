@@ -13,7 +13,7 @@
     <preference name="webviewbounce" value="false" />
     <preference name="UIWebViewBounce" value="false" />
     <preference name="DisallowOverscroll" value="true" />
-    <preference name="phonegap-version" value="4.1.2" />
+    <preference name="phonegap-version" value="3.6.2" />
 <!--
     
     <preference name="AutoHideSplashScreen" value="false" />
