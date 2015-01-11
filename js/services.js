@@ -1,7 +1,7 @@
 angular.module('baseApp.services', [])
 
 .factory('API', function ($rootScope, $http, $ionicLoading, $window) {
-   //var base = "http://localhost:9804";
+//   var base = "http://localhost:9804";
     var base = "http://caproomapp.herokuapp.com";
     $rootScope.show = function (text) {
         $rootScope.loading = $ionicLoading.show({
@@ -59,6 +59,14 @@ angular.module('baseApp.services', [])
         },
         getAll: function (email) {
             return $http.get(base+'/api/v1/baseApp/data/list', {
+                method: 'GET',
+                params: {
+                    token: email
+                }
+            });
+        },
+        getTotalCost: function (email) {
+            return $http.get(base+'/api/v1/baseApp/data/totalCost', {
                 method: 'GET',
                 params: {
                     token: email

@@ -4,17 +4,48 @@
 </ion-header-bar>
 <ion-content class="has-header padding" has-tabs="true" on-refresh="onRefresh()">
    <ion-refresher ng-hide="noData || incomplete" on-refresh="doRefresh('2')"></ion-refresher>
+   <div class="card" ng-repeat="item in costSum">
+      <div class="item item-text-wrap">
+         <span>
+         Total Cost: {{ item.totalCost }}
+         </span>
+      </div>
+   </div>
+    
    <div class="card" ng-repeat="item in list" >
       <div class="item item-text-wrap">
          <span>
-         {{ item.item }}
-         </span>
-         <br/>  <br/>
-         <p class="actions padding">
-            <i class="ion-trash-b icon-actions margin" ng-click="deleteItem('{{item._id}}')"></i>
-         </p>
+         {{ item.date }}
+         </span> 
+         <br />
+         <div class="row">
+             <div class="col">
+                 <span>
+                 {{ item.workName }}
+                 </span>
+             </div>
+             <div class="col">
+                 <span>
+                 {{ item.workType }}
+                 </span>
+             </div>
+             <div class="col">
+                 <span>
+                 {{ item.unitCost }}
+                 </span>
+             </div>
+             <div class="col">
+                 <span>
+                 {{ item.totalCost }}
+                 </span>
+             </div>
+
+             <br/><br/>
+             <p class="actions padding">
+                <i class="ion-trash-b icon-actions margin" ng-click="deleteItem('{{item._id}}')"></i>
+             </p>
+         </div> 
       </div>
-   </div>
    <div class="card" >
       <div class="item item-text-wrap" ng-show="noData || incomplete">
          <span ng-show="incomplete">

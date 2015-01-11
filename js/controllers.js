@@ -140,6 +140,15 @@ angular.module('baseApp.controllers', ['baseApp.services'])
  
 .controller('completedCtrl', function ($rootScope,$scope, API, $window) {
     $rootScope.$on('fetchCompleted', function () {
+        API.getTotalCost($rootScope.getToken()).success(function (data, status, headers, config) {
+            $scope.costSum = [];
+        
+            $scope.costSum.push(data[0]);
+            
+        }).error(function (data, status, headers, config) {
+            $rootScope.notify("Oops something went wrong!! Please try again later");
+        });
+        
         API.getAll($rootScope.getToken()).success(function (data, status, headers, config) {
             $scope.list = [];
             for (var i = 0; i < data.length; i++) {
