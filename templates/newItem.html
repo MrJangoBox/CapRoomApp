@@ -18,12 +18,10 @@
           
           <label class="item item-input item-select">
             <div class="input-label">
-              Work Type
+              Hectare
             </div>
-            <select ng-model="data.workType">
-              <option>Building</option>
-              <option selected>Digging</option>
-              <option>Filling</option>
+            <select ng-model="data.workType" ng-options="item.hectare as item.hectare for item in list">
+              <option value="">select</option>
             </select>
           </label>
           

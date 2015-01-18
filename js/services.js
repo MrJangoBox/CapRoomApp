@@ -74,6 +74,14 @@ angular.module('baseApp.services', [])
                 }
             });
         },
+        getNewItemParam: function (email) {
+            return $http.get(base+'/api/v1/baseApp/newitem/param', {
+                method: 'GET',
+                params: {
+                    token: email
+                }
+            });
+        },
         getOne: function (id, email) {
             return $http.get(base+'/api/v1/baseApp/data/item/' + id, {
                 method: 'GET',

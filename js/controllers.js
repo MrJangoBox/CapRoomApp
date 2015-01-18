@@ -194,6 +194,31 @@ angular.module('baseApp.controllers', ['baseApp.services'])
 })
  
 .controller('newCtrl', function ($rootScope, $scope, API, $window) {
+//    $rootScope.$on('fetchAll', function(){
+            API.getNewItemParam($rootScope.getToken()).success(function (data, status, headers, config) {
+            $rootScope.show("Please wait... Processing");
+            $scope.list = [];
+            for (var i = 0; i < data.length; i++) {
+                    $scope.list.push(data[i]);
+            };
+            if($scope.list.length == 0)
+            {
+                $scope.noData = true;
+            }
+            else
+            {
+                $scope.noData = false;
+            }
+            $rootScope.hide();
+        })
+//            .error(function (data, status, headers, config) {
+//            $rootScope.hide();
+//            $rootScope.notify("Oops something went wrong!! Please try again later");
+//        });
+//    });
+ 
+//    $rootScope.$broadcast('fetchAll');
+    
     $scope.data = {
         item: ""
     };

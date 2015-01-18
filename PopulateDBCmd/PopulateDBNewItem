@@ -1,0 +1,10 @@
+db.baseAppNewItem.insert(
+   [
+     { token: "A", user: "A", hectare: "h1" },
+     { token: "A", user: "A", hectare: "h2" },
+     { token: "A", user: "A", hectare: "h3" },
+     { token: "A", user: "A", hectare: "h4" },
+     { token: "A", user: "A", hectare: "h5" },
+     { token: "A", user: "A", hectare: "h6" }
+   ]
+)
